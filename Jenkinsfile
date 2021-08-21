@@ -1,5 +1,5 @@
 node{
-    def registyProject='92.222.23.101:5000/peter/nginx'
+    def registyProject='http://92.222.23.101:5000/peter/nginx'
     def image="${registyProject}:version-${env.BUILD_ID}"
     stage('Clone'){
         git 'https://github.com/Peterery21/pushRegistry.git'
@@ -13,7 +13,7 @@ node{
         }
     }
     stage('Push'){
-        docker.withRegistry('92.222.23.101:5000', 'mapay'){
+        docker.withRegistry('http://92.222.23.101:5000', 'mapay'){
             img.push 'latest'
             img.push()
         }
