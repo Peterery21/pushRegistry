@@ -1,7 +1,6 @@
 node{
     def registyProject='92.222.23.101:5000/peter/nginx'
     def IMAGE="${registyProject}:version-${env.BUILD_ID}"
-
     stage('Clone'){
         git 'https://github.com/Peterery21/pushRegistry.git'
     }
